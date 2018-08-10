@@ -3,6 +3,14 @@ from termcolor import colored
 import time
 
 
+def printing_helper():
+    print(colored('\tGuessing Game', attrs=['bold']))
+    print()
+    print(colored('*****Hit Enter to began*****', 'red'))
+    input()
+    print(colored('Please guess a number from 1 - 100!', 'yellow'))
+
+
 def redemption_round(guesses_remaining_redemption_round):
     random_num2 = random.randint(1, 25)
     while True:
@@ -66,14 +74,6 @@ def first_round(guesses_remaining):
             print()
             time.sleep(2)
             break
-
-
-def printing_helper():
-    print(colored('\tGuessing Game', attrs=['bold']))
-    print()
-    print(colored('*****Hit Enter to began*****', 'red'))
-    input()
-    print(colored('Please guess a number from 1 - 100!', 'yellow'))
 
 
 def main():
