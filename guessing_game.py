@@ -70,9 +70,10 @@ def first_round(guesses_remaining):
             print('\tThe winning number was: ', random_num)
             print(colored('Sorry.... Ran out of tries', 'red'))
             print()
-            print(colored('BUUUUUUUUUUUUUUT.......', 'green'))
+            print(colored('It is not over just yet......', 'green'))
             print()
             time.sleep(2)
+            print(colored('BOOOOOOM', 'green'))
             break
 
 
