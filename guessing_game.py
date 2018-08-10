@@ -3,8 +3,9 @@ from termcolor import colored
 import time
 
 
-def printing_helper():
-    print(colored('\tGuessing Game', attrs=['bold']))
+def welcome():
+    print()
+    print(colored('\t---------Guessing Game----------', attrs=['bold']))
     print()
     print(colored('*****Hit Enter to began*****', 'red'))
     input()
@@ -13,11 +14,13 @@ def printing_helper():
 
 def redemption_round(guesses_remaining_redemption_round):
     random_num2 = random.randint(1, 25)
+    print(colored('Redemption Round guess a number from 1 to 25', 'blue'))
+    time.sleep(1)
+    print()
+    print(colored('Hit enter to try one last time!', 'red'))
+    input()
     while True:
-        num = int(
-            input(
-                colored('Redemption Round...What is your guess 1-25: ',
-                        'yellow')))
+        num = int(input(colored('What is your guess: ', 'yellow')))
         if num > 25 or num < 0:
             print(colored('Number must be between 1 and 25', 'red'))
             print()
@@ -53,17 +56,15 @@ def first_round(guesses_remaining):
             continue
         guesses_remaining = guesses_remaining - 1
         if user_num == random_num:
-            print(
-                colored('Yay You got it, you are very good at this!!!',
-                        'green'))
+            print(colored('Bet that... You Got It!!!', 'green'))
             exit()
 
         else:
             if random_num > user_num:
-                print(colored("Choose Higher", 'cyan'))
+                print(colored("Up it up a little bit!", 'cyan'))
                 print()
             elif random_num < user_num:
-                print(colored("Choose Lower", 'cyan'))
+                print(colored("PIPE Down my guy!", 'cyan'))
                 print()
 
         if guesses_remaining == 0:
@@ -78,7 +79,7 @@ def first_round(guesses_remaining):
 
 
 def main():
-    printing_helper()
+    welcome()
     guesses_remaining = 5
     first_round(guesses_remaining)
     guesses_remaining_redemption_round = 3
