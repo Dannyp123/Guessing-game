@@ -8,6 +8,7 @@ def welcome():
     print(colored('\t---------Guessing Game----------', attrs=['bold']))
     print()
     print(colored('\t*****Hit Enter to began*****', 'red'))
+    print('-------------------------------------------')
     input()
 
 
@@ -52,19 +53,20 @@ def redemption_round(guesses_remaining_redemption_round):
 
 
 def different_game(advanced_guesses_remaining):
-    choose = input(
+    choice = input(
         colored(
             'Would you like the Standard Version(1) or the Advanced Version(2)? ',
             'green'))
-    if choose == '1':
+    if choice == '1':
         guesses_remaining = 5
         print(colored('Please guess a number from 1 - 100!', 'yellow'))
         first_round(guesses_remaining)
         print(colored('Still between 1-100', 'blue'))
     else:
         advanced_random_num = random.randint(1, 200)
+        print('\nChoose a number between 1 and 200!')
+        print()
         while True:
-            print('\nChoose a number between 1 and 200!')
             advanced_user_num = int(
                 input('Choose your number or (0) to quit!! '))
             if advanced_user_num == 0:
@@ -74,7 +76,10 @@ def different_game(advanced_guesses_remaining):
                 continue
             advanced_guesses_remaining = advanced_guesses_remaining - 1
             if advanced_user_num == advanced_random_num:
-                print(colored('Bet that... You Got It!!!', 'green'))
+                print(colored('WAITING...WAITING...OH MY!!', 'red'))
+                time.sleep(4)
+                print()
+                print(colored('BOOOOOOM....You Got It!!!', 'green'))
                 exit()
             else:
                 if advanced_random_num > advanced_user_num:
@@ -106,8 +111,8 @@ def first_round(guesses_remaining):
             if user_num == random_num:
                 print(colored('WAITING...WAITING...OH MY!!', 'red'))
                 time.sleep(4)
-                print(colored('Bet that... You Got It!!!', 'green'))
                 print()
+                print(colored('BOOOOOM You got it great game.', 'green'))
                 exit()
 
             else:
