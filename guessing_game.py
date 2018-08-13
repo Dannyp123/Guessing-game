@@ -73,13 +73,13 @@ def different_game(advanced_guesses_remaining):
                 exit()
             else:
                 if advanced_random_num > advanced_user_num:
-                    print(colored("Up it up a little bit!", 'cyan'))
+                    print(colored("Bump it up a hair!", 'cyan'))
                     print()
                 elif advanced_random_num < advanced_user_num:
-                    print(colored("PIPE Down my guy!", 'cyan'))
+                    print(colored("Get back on your level!!", 'cyan'))
                     print()
             if advanced_guesses_remaining == 0:
-                print('\tThe winning number was: ', advanced_random_num)
+                print('\tThe winning number was:', advanced_random_num)
                 print(colored('Sorry.... Ran out of tries', 'red'))
                 print('Now Choose a number between 1-100')
                 break
