@@ -7,7 +7,7 @@ def welcome():
     print()
     print(colored('\t---------Guessing Game----------', attrs=['bold']))
     print()
-    print(colored('*****Hit Enter to began*****', 'red'))
+    print(colored('\t*****Hit Enter to began*****', 'red'))
     input()
 
 
@@ -53,12 +53,14 @@ def redemption_round(guesses_remaining_redemption_round):
 
 def different_game(advanced_guesses_remaining):
     choose = input(
-        'Would you like the Standard Version(1) or the Advanced Version(2)? ')
+        colored(
+            'Would you like the Standard Version(1) or the Advanced Version(2)? ',
+            'green'))
     if choose == '1':
         guesses_remaining = 5
         print(colored('Please guess a number from 1 - 100!', 'yellow'))
         first_round(guesses_remaining)
-        print('Still between 1-100')
+        print(colored('Still between 1-100', 'blue'))
     else:
         advanced_random_num = random.randint(1, 200)
         while True:
@@ -102,7 +104,10 @@ def first_round(guesses_remaining):
                 continue
             guesses_remaining = guesses_remaining - 1
             if user_num == random_num:
+                print(colored('WAITING...WAITING...OH MY!!', 'red'))
+                time.sleep(4)
                 print(colored('Bet that... You Got It!!!', 'green'))
+                print()
                 exit()
 
             else:
