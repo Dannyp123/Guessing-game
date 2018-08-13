@@ -63,7 +63,10 @@ def different_game(advanced_guesses_remaining):
         advanced_random_num = random.randint(1, 200)
         while True:
             print('\nChoose a number between 1 and 200!')
-            advanced_user_num = int(input('Choose your number!! '))
+            advanced_user_num = int(
+                input('Choose your number or (0) to quit!! '))
+            if advanced_user_num == 0:
+                exit()
             if advanced_user_num > 200 or advanced_user_num < 0:
                 print(colored('\nNumber must be between 1 and 200', 'red'))
                 continue
