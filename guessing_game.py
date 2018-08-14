@@ -5,10 +5,9 @@ import time
 
 def welcome():
     print()
-    print(colored('\t---------Guessing Game----------', attrs=['bold']))
+    print(colored('\t----------Guessing Game----------', attrs=['bold']))
     print()
     print(colored('\t*****Hit Enter to began*****', 'red'))
-    print('-------------------------------------------')
     input()
 
 
@@ -81,6 +80,12 @@ def different_game(advanced_guesses_remaining):
                 print()
                 print(colored('BOOOOOOM....You Got It!!!', 'green'))
                 exit()
+            elif advanced_guesses_remaining == 0:
+                print('\tThe winning number was:', advanced_random_num)
+                print(colored('Sorry.... Ran out of tries', 'red'))
+                print('Now Choose a number between 1-100')
+                break
+
             else:
                 if advanced_random_num > advanced_user_num:
                     print(colored("Bump it up a hair!", 'cyan'))
@@ -88,11 +93,6 @@ def different_game(advanced_guesses_remaining):
                 elif advanced_random_num < advanced_user_num:
                     print(colored("Get back on your level!!", 'cyan'))
                     print()
-            if advanced_guesses_remaining == 0:
-                print('\tThe winning number was:', advanced_random_num)
-                print(colored('Sorry.... Ran out of tries', 'red'))
-                print('Now Choose a number between 1-100')
-                break
 
 
 def first_round(guesses_remaining):
