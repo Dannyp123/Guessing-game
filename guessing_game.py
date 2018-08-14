@@ -11,46 +11,6 @@ def welcome():
     input()
 
 
-def redemption_round(guesses_remaining_redemption_round):
-    computer_random_num2 = random.randint(1, 25)
-    random_num2 = random.randint(1, 25)
-    print(colored('Redemption Round guess a number from 1 to 25', 'blue'))
-    time.sleep(1)
-    print()
-    print(colored('Hit enter to try one last time!', 'red'))
-    input()
-    while True:
-        if computer_random_num2 == random_num2:
-            print('The Computer Got the WUUB this time')
-            break
-        else:
-            num = int(input(colored('What is your guess: ', 'yellow')))
-            if num > 25 or num < 0:
-                print(colored('Number must be between 1 and 25', 'red'))
-                print()
-                continue
-            guesses_remaining_redemption_round = guesses_remaining_redemption_round - 1
-            if num == random_num2:
-                print()
-                print(colored('****SUCCESS!!****', 'blue'))
-                break
-
-            if guesses_remaining_redemption_round == 0:
-                print(colored('Womp womp, womp, wooooommmmmp :-( !!', 'red'))
-                print()
-                print('\tThe winning number was: ', random_num2)
-                break
-
-            else:
-                if num > random_num2:
-                    print(colored('REALLY.... guess lower!', 'cyan'))
-                    print()
-                elif num < random_num2:
-                    print(colored('Guess a little bit higher my guy!', 'cyan'))
-                    print()
-                    continue
-
-
 def different_game(advanced_guesses_remaining):
     choice = input(
         colored(
@@ -132,6 +92,46 @@ def first_round(guesses_remaining):
                 elif random_num < user_num:
                     print(colored("PIPE Down my guy!", 'cyan'))
                     print()
+
+
+def redemption_round(guesses_remaining_redemption_round):
+    computer_random_num2 = random.randint(1, 25)
+    random_num2 = random.randint(1, 25)
+    print(colored('Redemption Round guess a number from 1 to 25', 'blue'))
+    time.sleep(1)
+    print()
+    print(colored('Hit enter to try one last time!', 'red'))
+    input()
+    while True:
+        if computer_random_num2 == random_num2:
+            print('The Computer Got the WUUB this time')
+            break
+        else:
+            num = int(input(colored('What is your guess: ', 'yellow')))
+            if num > 25 or num < 0:
+                print(colored('Number must be between 1 and 25', 'red'))
+                print()
+                continue
+            guesses_remaining_redemption_round = guesses_remaining_redemption_round - 1
+            if num == random_num2:
+                print()
+                print(colored('****SUCCESS!!****', 'blue'))
+                break
+
+            if guesses_remaining_redemption_round == 0:
+                print(colored('Womp womp, womp, wooooommmmmp :-( !!', 'red'))
+                print()
+                print('\tThe winning number was: ', random_num2)
+                break
+
+            else:
+                if num > random_num2:
+                    print(colored('REALLY.... guess lower!', 'cyan'))
+                    print()
+                elif num < random_num2:
+                    print(colored('Guess a little bit higher my guy!', 'cyan'))
+                    print()
+                    continue
 
 
 def main():
