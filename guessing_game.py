@@ -81,8 +81,8 @@ def different_game(advanced_guesses_remaining):
                 print(colored('BOOOOOOM....You Got It!!!', 'green'))
                 exit()
             elif advanced_guesses_remaining == 0:
-                print('\tThe winning number was:', advanced_random_num)
                 print(colored('Sorry.... Ran out of tries', 'red'))
+                print('\tThe winning number was:', advanced_random_num)
                 print('Now Choose a number between 1-100')
                 break
 
@@ -115,6 +115,16 @@ def first_round(guesses_remaining):
                 print(colored('BOOOOOM You got it great game.', 'green'))
                 exit()
 
+            elif guesses_remaining == 0:
+                print(colored('Sorry.... Ran out of tries', 'red'))
+                print('\tThe winning number was: ', random_num)
+                print()
+                print(colored('It is not over just yet......', 'green'))
+                print()
+                time.sleep(2)
+                print(colored('BOOOOOOM', 'green'))
+                break
+
             else:
                 if random_num > user_num:
                     print(colored("Up it up a little bit!", 'cyan'))
@@ -122,16 +132,6 @@ def first_round(guesses_remaining):
                 elif random_num < user_num:
                     print(colored("PIPE Down my guy!", 'cyan'))
                     print()
-
-            if guesses_remaining == 0:
-                print('\tThe winning number was: ', random_num)
-                print(colored('Sorry.... Ran out of tries', 'red'))
-                print()
-                print(colored('It is not over just yet......', 'green'))
-                print()
-                time.sleep(2)
-                print(colored('BOOOOOOM', 'green'))
-                break
 
 
 def main():
